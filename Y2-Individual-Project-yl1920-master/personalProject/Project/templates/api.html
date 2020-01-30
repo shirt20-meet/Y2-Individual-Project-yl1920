@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Place</title>
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='creative.css')}}">
+
+	<link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Handlee">
+	
+	<style>
+	body {
+ 		font-family: 'Handlee', s20if;
+  		font-size: 20px;
+	}
+    /*nav bar*/
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover:not(.active) {
+		background-color: #111;
+	}
+
+	.active {
+		background-color: #79c6ed;
+	}
+
+	</style>
+</head>
+<body>
+
+	<ul>
+		<li><a class="active" href="{{url_for('home')}}">Home</a></li>
+		<li><a href="{{url_for('api')}}">Api</a></li>
+		<li><a href="{{url_for('addPlace')}}">Add Place</a></li>
+	</ul>
+
+	<!-- {% if places %}
+	{% for place in places %}
+	<div>
+		<h1>{{place.name}}</h1>
+	</div>
+	{% endfor%}
+	{% else %}
+	<h2>Sorry, your database is empty.</h2>
+	{% endif %} -->
+
+	<section>
+	 	<div>
+
+			{% for place in places %}
+			<li style="list-style: none;" class="place_info">
+			<div style="position: relative;top:opx;">
+				<b>place name:</b> {{place.name}}
+				<br><b>place country:</b> {{place.country}}
+				<br><b>place city:</b> {{place.city}}
+				<br><b>place street:</b> {{place.street}}
+				<br><button class="button" id="{{place.id}}">Show Map</button>
+			</div>
+			<iframe
+				style='display:none;' id="description_{{place.id}}"
+				width="600"
+				height="450"
+				frameborder="0" style="border:0"
+				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDb6rgySRK06gNSaMXSSWsu2wW61KbdIdY	&q={{place.street}},{{place.city}}" allowfullscreen>
+			</iframe>					
+			</li>
+
+			{% endfor %}
+		</div>
+	</section>
+
+	<script src="{{url_for('static', filename='js/map_button.js')}}"></script>
+
+</body>
+</html>

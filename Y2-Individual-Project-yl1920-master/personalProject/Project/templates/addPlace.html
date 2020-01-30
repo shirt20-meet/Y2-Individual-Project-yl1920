@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Place</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='creative.css')}}">
+
+	<link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Handlee">
+	
+	<style>
+	body {
+ 		font-family: 'Handlee', s20if;
+  		font-size: 20px;
+	}
+    /*nav bar*/
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover:not(.active) {
+		background-color: #111;
+	}
+
+	.active {
+		background-color: #79c6ed;
+	}
+
+	</style>
+</head>
+<body>
+
+	<ul>
+		<li><a class="active" href="{{url_for('home')}}">Home</a></li>
+		<li><a href="{{url_for('api')}}">Api</a></li>
+		<li><a href="{{url_for('addPlace')}}">Add Place</a></li>
+	</ul>
+
+	<div>
+		<form action="/addPlace" method="POST">
+		<div class="form-group floating-label-form-group controls mb-0 pb-2">
+			<label>Place Name</label>
+			<input class="form-control" type="text" name="name" placeholder="Place Name" required="required">
+			<p class="help-block text-danger"></p><br>
+
+			<label>Place Country</label>
+			<input class="form-control" type="text" name="country" placeholder="Place Country" required="required">
+			<p class="help-block text-danger"></p><br>
+
+			<label>Place City</label>
+			<input class="form-control" type="text" name="city" placeholder="Place City" required="required">
+			<p class="help-block text-danger"></p><br>
+
+			<label>Place Street</label>
+			<input class="form-control" type="text" name="street" placeholder="Place Street" required="required">
+			<p class="help-block text-danger"></p><br>
+			<div class="form-group">
+				<button type="submit" class="button button4">Send</button>
+			</div>
+		</div>
+		</form>
+	</div>
+
+	<script src="{{url_for('static', filename='js/map_button.js')}}"></script>
+</body>
+</html>

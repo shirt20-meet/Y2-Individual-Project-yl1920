@@ -1,0 +1,84 @@
+.container {
+  position: relative;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image {
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #79c6ed;
+  overflow: hidden;
+  width: 50%;
+  height:0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.place_info {
+  border-style: solid;
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  width: 320px;
+  height: 170px;
+}
+
+.button {
+  background-color: #e7e7e7; 
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button4 {
+  background-color: #e7e7e7;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: white;}
+
+.place_info {
+  border-style: solid;
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  width: 320px;
+  height: 170px;
+}
